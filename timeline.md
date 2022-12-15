@@ -18,7 +18,9 @@ cocotb的目标是用python来编写tb文件，并不是替代仿真器（Simula
 
 ![cocotb整体架构图](https://docs.cocotb.org/en/stable/_images/cocotb_overview.svg)
 
-执行程序在仿真器和python代码之间**轮流**切换，利用仿真器对[PLI](https://www.asic-world.com/verilog/pli1.html#Introduction)（Programming Language Interface）的支持，python代码（更确切地说是其外围的c代码）向仿真器注册事件函数，并在事件触发时进行响应，在python代码中处理当前仿真的状态（此时已不再推进仿真时间），进而产生新的激励信号，通过调用await trigger后再度回到仿真器的主线任务。这里的trigger是cocotb定义的特定事件。python代码为编程方便，允许使用多协程并发。当且仅当所有协程（或其正在等待的子协程）都处于await trigger的状态后，才再度回答仿真器。也就是说，python端各协程的处理时间长度和先后顺序只要本身代码没有特殊相互依赖关系，那么将不会影响返回仿真器的时机。
+执行程序在仿真器和python代码之间**轮流**切换，利用仿真器对[PLI](https://www.asic-world.com/verilog/pli1.html#Introduction)（Programming Language Interface）的支持，python代码（更确切地说是其外围的c代码）向仿真器注册事件函数，并在事件触发时进行响应，在python代码中处理当前仿真的状态（此时已不再推进仿真时间），进而产生新的激励信号，通过调用await trigger后再度回到仿真器的主线任务。这里的trigger是cocotb定义的特定事件。python代码为编程方便，允许使用多协程并发。当且仅当所有协程（或其正在等待的子协程）都处于await trigger的状态后，才再度回到仿真器。也就是说，python端各协程的处理时间长度和先后顺序只要本身代码没有特殊相互依赖关系，那么将不会影响返回仿真器的时机。
+
+![多协程同步示意图](./assets/timeline.png)
 
 #### cocotb中的trigger
 
