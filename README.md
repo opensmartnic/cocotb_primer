@@ -1,6 +1,6 @@
 ### 理解cocotb
 
-在这里分享[cocotb](https://github.com/cocotb/cocotb)相关的文章，解析其运行原理和实践案例，欢迎讨论和贡献。
+在这里分享[cocotb](https://github.com/cocotb/cocotb)相关的文章，解析其运行原理和实践案例，敬请指正。
 
 目录
 
