@@ -8,4 +8,5 @@
 * [cocotb中的时间线](timeline.md)
 * [实践案例：测试vivado中的block design](cocotb_use_xilinx_ip.md)
 * [项目介绍：cocotbext-axi介绍](intro_cocotbext_axi.md)
+* [使用vscode远程调试cocotb（环境：linux+icarus）](debug_cocotb_with_vscode.md)
 * ...
