@@ -654,7 +654,7 @@ https://github.com/opensmartnic/mycocotb/blob/7abaa0ae92539da13478363dd0ad78a6c5
 
 #### 其他
 
-1、代码是根据https://github.com/cocotb/cocotb/tree/cf9d4c4353080b5592f8bd0b18459d0629bdbb4e 这个时间点还是改的。我在项目里，也保留有历史的git信息，可以在github上浏览文件变更记录。
+1、代码是根据https://github.com/cocotb/cocotb/tree/cf9d4c4353080b5592f8bd0b18459d0629bdbb4e 这个时间点改的。我在项目里，也保留有历史的git信息，可以在github上浏览文件变更记录。
 
 2、如果想实际调试下mycocotb，建议使用vscode，参考[这里](debug_cocotb_with_vscode.md)
 
