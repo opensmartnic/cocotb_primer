@@ -91,7 +91,7 @@ async def test_matrix_vector_multiplier(dut):
 
 这里我们在python中随机产生测试数据，传输到verilog中，然后启动计算，并通过`await RisingEdge(dut.clk)`循环等待直到dut.done的值变为1。然后读取结果，并和numpy计算的结果对比，如果没有太大的差异（理论上应该没有差异，但我的verilog实现中，对最后末位的近似做了简化），就认为测试通过。
 
-配套地，我们在编译一个Makefile：
+配套地，我们再编写一个Makefile：
 
 ```Makefile
 SIM ?= icarus
@@ -186,7 +186,7 @@ clean:
 .PHONY: all run clean test
 ```
 
-直接运行`make run`会出发整个项目的编译和执行，可以得到类似结果：
+直接运行`make run`会触发整个项目的编译和执行，可以得到类似结果：
 
 ![image-20250609223642693](assets/matmul_in_mycocotb.png) 
 
